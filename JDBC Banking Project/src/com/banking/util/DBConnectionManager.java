@@ -11,13 +11,14 @@ import java.sql.SQLException;
  * */
 
 public class DBConnectionManager {
+	
 	private Connection connection;
 	
-		public DBConnectionManager(String dbURL, String username, String password) throws 
+		public DBConnectionManager(String url, String username, String password) throws 
 		ClassNotFoundException, SQLException {
-			
-				Class.forName("oracle.jdbc.driver.OracleDriver");
-				this.connection = DriverManager.getConnection(dbURL,username,password);
+			System.out.println("Inside DB Connection Manager");
+				Class.forName("oracle.jdbc.OracleDriver");
+				this.connection = DriverManager.getConnection(url,username,password);
 		}
 		public Connection getConnection() {
 			return this.connection;

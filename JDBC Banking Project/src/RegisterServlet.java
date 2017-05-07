@@ -1,5 +1,3 @@
-
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -43,6 +41,8 @@ public class RegisterServlet extends HttpServlet {
 		String mobile = request.getParameter("mobile");
 		String city = request.getParameter("city");
 		String dob = request.getParameter("dob");
+		
+		System.out.println(name + email + mobile + city + dob);
 		
 		/*write the logic for input validation*/
 		String errorMsg = null;

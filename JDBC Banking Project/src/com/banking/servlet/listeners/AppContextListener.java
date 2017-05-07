@@ -13,14 +13,14 @@ public class AppContextListener implements ServletContextListener {
 	
 		public void contextInitialized(ServletContextEvent servletContextEvent) {
 			ServletContext ctx = servletContextEvent.getServletContext();
-			
+			System.out.println("Inside AppContextListener");
 			//Initialize DB connection
-			String URL = ctx.getInitParameter("dbURL");
-			String USER = ctx.getInitParameter("username");
-			String PASSWORD = ctx.getInitParameter("password");
+			String url = ctx.getInitParameter("url");
+			String username = ctx.getInitParameter("username");
+			String password = ctx.getInitParameter("password");
 			
 			try {
-				DBConnectionManager connectionManager = new DBConnectionManager(URL, USER, PASSWORD);
+				DBConnectionManager connectionManager = new DBConnectionManager(url, username, password);
 				ctx.setAttribute("DBConnection", connectionManager.getConnection());
 				System.out.println("DB Connection Intialized Successfully");
 			}
