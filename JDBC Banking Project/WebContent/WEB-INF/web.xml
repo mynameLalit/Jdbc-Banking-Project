@@ -19,6 +19,6 @@
   </context-param>
   <context-param>
   	<param-name>url</param-name>
-  	<param-value>jdbc:oracle:thin:@localhost:1523:xe</param-value>
+  	<param-value>jdbc:oracle:thin:@localhost:1521:orcl</param-value>
   </context-param>
 </web-app>
