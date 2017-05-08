@@ -76,18 +76,18 @@ public class RegisterServlet extends HttpServlet {
 		
 	//	System.out.println("Line 73");
 		else {
-			/*System.out.println("Line 73");
+			System.out.println("Line 73");
 			Connection con = (Connection)getServletContext().getAttribute("DBConnection");
-			PreparedStatement ps = null;*/
+			PreparedStatement ps = null;
 			System.out.println("Line 79");
 			
 			
 			try{
 				System.out.println("Line 81");
-				Class.forName("oracle.jdbc.driver.OracleDriver");
-				Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","system","123456");
+				/*Class.forName("oracle.jdbc.driver.OracleDriver");
+				Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","system","123456"); */
 				
-				PreparedStatement ps = con.prepareStatement("insert into customers(name,email,mobile,city,dob) values (?,?,?,?,?)");
+				ps = con.prepareStatement("insert into customers(name,email,mobile,city,dob) values (?,?,?,?,?)");
 				System.out.println("Line 82");
 				ps.setString(1, name);
 				ps.setString(2, email);
@@ -109,7 +109,7 @@ public class RegisterServlet extends HttpServlet {
 				//logger.error("Database connection problem");
 				throw new ServletException("DB Connection Problem");
 			}
-			/*finally {
+			finally {
 				try {
 					ps.close();
 				}
@@ -117,7 +117,7 @@ public class RegisterServlet extends HttpServlet {
 					System.out.println("Inside second catch block");
 					//logger.error("SQLException is closing PreparedStatement");
 				}
-			}*/
+			}
 		}
 		
 		
